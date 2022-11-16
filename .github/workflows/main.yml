@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Delete "index.js"
+        run: | 
+          rm dist/*
       - name: Install
         run: npm ci
       - name: Build
@@ -17,7 +20,6 @@ jobs:
         run: |
           git config --local user.name "Github BUILD"
           git config --local user.email github-actions@github.com
-          git touch dist/index.js
           git add dist/index.js
           git commit -m "update index.js"
       - name: Push new index.js to repo
