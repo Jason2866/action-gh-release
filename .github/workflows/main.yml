@@ -13,6 +13,17 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Commit new build
+        run: |
+          git config --local user.name "Github BUILD"
+          git config --local user.email github-actions@github.com
+          git add dist/index.js
+          git commit -m "update index.js"
+      - name: Push new index.js to repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MASTER_ACCESS_TOKEN }}
+          branch: 'master'
       - name: Test
         run: npm run test
       - name: Format
