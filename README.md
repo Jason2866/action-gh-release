@@ -43,7 +43,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Release
-        uses: jason2866/action-gh-release@v1.1
+        uses: jason2866/action-gh-release@v1.2
         if: startsWith(github.ref, 'refs/tags/')
 ```
 
@@ -64,7 +64,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Release
-        uses: jason2866/action-gh-release@v1.1
+        uses: jason2866/action-gh-release@v1.2
 ```
 
 ### ⬆️ Uploading release assets
@@ -94,7 +94,7 @@ jobs:
       - name: Test
         run: cat Release.txt
       - name: Release
-        uses: jason2866/action-gh-release@v1.1
+        uses: jason2866/action-gh-release@v1.2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Release.txt
@@ -118,7 +118,7 @@ jobs:
       - name: Test
         run: cat Release.txt
       - name: Release
-        uses: jason2866/action-gh-release@v1.1
+        uses: jason2866/action-gh-release@v1.2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
@@ -148,7 +148,7 @@ jobs:
       - name: Generate Changelog
         run: echo "# Good things have arrived" > ${{ github.workspace }}-CHANGELOG.txt
       - name: Release
-        uses: jason2866/action-gh-release@v1.1
+        uses: jason2866/action-gh-release@v1.2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: ${{ github.workspace }}-CHANGELOG.txt
