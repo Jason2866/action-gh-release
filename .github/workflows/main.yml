@@ -14,7 +14,9 @@ jobs:
           git config --local user.name "Github BUILD"
           git config --local user.email github-actions@github.com
           rm dist/*
+          rm package-lock.json
           git rm dist/*
+          git rm package-lock.json
           git commit -m "remove index.js"
       - name: Install
         run: npm ci
@@ -23,6 +25,7 @@ jobs:
       - name: Commit new build
         run: |
           git add dist/index.js
+          git add package-lock.json
           git commit -m "update index.js"
       - name: Push new index.js to repo
         uses: ad-m/github-push-action@master
