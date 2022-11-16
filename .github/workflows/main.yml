@@ -14,7 +14,6 @@ jobs:
           git config --local user.name "Github BUILD"
           git config --local user.email github-actions@github.com
           rm dist/*
-          rm package-lock.json
           git rm dist/*
           git rm package-lock.json
           git commit -m "remove index.js"
