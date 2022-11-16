@@ -19,7 +19,7 @@ jobs:
       - name: Install
         run: | 
           npm ci
-          npm audit fix --force
+          npm audit fix
       - name: Build
         run: npm run build
       - name: Commit new build
