@@ -15,7 +15,6 @@ jobs:
           git config --local user.email github-actions@github.com
           rm dist/*
           git rm dist/*
-          git rm package-lock.json
           git commit -m "remove index.js"
       - name: Install
         run: npm ci
