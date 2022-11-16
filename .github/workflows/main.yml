@@ -17,7 +17,9 @@ jobs:
           git rm dist/*
           git commit -m "remove index.js"
       - name: Install
-        run: npm ci
+        run: | 
+          npm ci
+          npm audit fix --force
       - name: Build
         run: npm run build
       - name: Commit new build
