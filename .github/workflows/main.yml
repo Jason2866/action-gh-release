@@ -17,7 +17,7 @@ jobs:
         run: |
           git config --local user.name "Github BUILD"
           git config --local user.email github-actions@github.com
-          git-touch dist/index.js
+          git touch dist/index.js
           git add dist/index.js
           git commit -m "update index.js"
       - name: Push new index.js to repo
