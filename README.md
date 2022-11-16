@@ -14,8 +14,8 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/softprops/action-gh-release/actions">
-		<img src="https://github.com/softprops/action-gh-release/workflows/Main/badge.svg"/>
+  <a href="https://github.com/jason2866/action-gh-release/actions">
+		<img src="https://github.com/jason2866/action-gh-release/workflows/Main/badge.svg"/>
 	</a>
 </div>
 
@@ -41,9 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: jason2866/action-gh-release@v1.1
         if: startsWith(github.ref, 'refs/tags/')
 ```
 
@@ -62,9 +62,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: jason2866/action-gh-release@v1.1
 ```
 
 ### ⬆️ Uploading release assets
@@ -88,13 +88,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
         run: cat Release.txt
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: jason2866/action-gh-release@v1.1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: Release.txt
@@ -112,13 +112,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
         run: cat Release.txt
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: jason2866/action-gh-release@v1.1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
@@ -144,11 +144,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Generate Changelog
         run: echo "# Good things have arrived" > ${{ github.workspace }}-CHANGELOG.txt
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: jason2866/action-gh-release@v1.1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: ${{ github.workspace }}-CHANGELOG.txt
