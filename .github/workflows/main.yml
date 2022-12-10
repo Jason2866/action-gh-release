@@ -17,7 +17,7 @@ jobs:
           rm package-lock.json
           git rm package-lock.json
           git rm dist/*
-          git commit -m "remove index.js"
+          #git commit -m "remove index.js"
       - name: Install
         run: npm install
       - name: Build
